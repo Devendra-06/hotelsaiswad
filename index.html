@@ -496,21 +496,41 @@
     .map-wrap iframe { width: 100%; height: 100%; border: none; }
 
     /* ── Footer ────────────────────────────────── */
-    .footer { background: var(--dark); color: #78716C; padding: 64px 0 28px; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand h3 { font-family: var(--font-heading); font-size: 1.4rem; color: #FEFCE8; margin-bottom: 12px; }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.8; max-width: 300px; }
-    .footer-col h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #A8A29E; margin-bottom: 20px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-col a { font-size: 0.88rem; color: #57534E; transition: var(--transition); }
-    .footer-col a:hover { color: var(--accent-light); padding-left: 4px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-    }
-    .footer-bottom p { font-size: 0.8rem; color: #44403C; }
-    .powered-by { font-size: 0.8rem; color: #44403C; }
-    .powered-by a { color: var(--accent-light); font-weight: 600; }
+    .footer { background: linear-gradient(180deg, var(--dark) 0%, #050504 100%); color: #78716C; padding: 0; position: relative; overflow: hidden; }
+    .footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(27,94,32,0.4), var(--accent), rgba(27,94,32,0.4), transparent); }
+    .footer-cta-strip { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); padding: 40px 0; text-align: center; position: relative; overflow: hidden; }
+    .footer-cta-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.06) 0%, transparent 70%); }
+    .footer-cta-strip h3 { font-family: var(--font-heading); font-size: 1.6rem; color: white; margin-bottom: 6px; position: relative; }
+    .footer-cta-strip p { font-size: 0.92rem; color: rgba(255,255,255,0.7); margin-bottom: 20px; position: relative; }
+    .footer-cta-btn { display: inline-flex; align-items: center; gap: 8px; position: relative; background: white; color: var(--primary-dark); padding: 14px 32px; border-radius: 12px; font-weight: 700; font-size: 0.92rem; transition: var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .footer-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .footer-main { padding: 56px 0 32px; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+    .footer-brand-header { display: flex; align-items: center; gap: 14px; }
+    .footer-brand-logo { width: 48px; height: 48px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.3); flex-shrink: 0; }
+    .footer-brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .footer-brand h3 { font-family: var(--font-heading); font-size: 1.3rem; color: #FEFCE8; line-height: 1.2; }
+    .footer-brand h3 small { display: block; font-size: 0.6rem; font-weight: 500; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-body); margin-top: 2px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.8; max-width: 320px; }
+    .footer-veg-badge { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); padding: 6px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; color: #86EFAC; }
+    .footer-veg-badge .fvb-dot { width: 6px; height: 6px; background: #22C55E; border-radius: 50%; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: #A8A29E; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .footer-col a { font-size: 0.88rem; color: #57534E; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+    .footer-col a::before { content: ''; width: 0; height: 1.5px; background: var(--accent-light); transition: width 0.3s ease; }
+    .footer-col a:hover { color: #FEFCE8; }
+    .footer-col a:hover::before { width: 12px; }
+    .footer-hours { display: flex; flex-direction: column; gap: 12px; }
+    .footer-hours-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding-bottom: 10px; border-bottom: 1px solid #1C1917; }
+    .footer-hours-row span:first-child { color: #78716C; }
+    .footer-hours-row span:last-child { color: #D6D3D1; font-weight: 600; }
+    .footer-hours-row.open span:last-child { color: #86EFAC; }
+    .footer-bottom { border-top: 1px solid #1C1917; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-bottom p { font-size: 0.78rem; color: #44403C; }
+    .powered-by { font-size: 0.78rem; color: #44403C; display: flex; align-items: center; gap: 6px; }
+    .powered-by a { color: var(--accent-light); font-weight: 600; transition: var(--transition); }
+    .powered-by a:hover { color: var(--accent); }
 
     /* ── Animations ────────────────────────────── */
     .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -588,7 +608,11 @@
       .review-card { padding:24px 20px; }
       .contact-grid { grid-template-columns:1fr; gap:16px; }
       .contact-card { padding:16px; }
-      .footer-top { grid-template-columns:1fr; gap:28px; text-align:center; }
+      .footer-top { grid-template-columns:1fr 1fr; gap:32px; }
+      .footer-brand { grid-column: 1 / -1; text-align:center; align-items:center; }
+      .footer-brand-header { justify-content:center; }
+      .footer-brand p { margin:0 auto; }
+      .footer-cta-strip h3 { font-size:1.3rem; }
       .footer-bottom { flex-direction:column; text-align:center; gap:12px; }
       .section { padding:56px 0; }
       .phone-frame { width:220px; height:400px; }
@@ -637,7 +661,10 @@
       .app-feats { grid-template-columns:1fr; }
       .phone-frame { width:180px; height:340px; border-radius:28px; padding:10px; }
       .phone-notch { width:80px; height:20px; border-radius:0 0 12px 12px; }
-      .footer { padding:40px 0 0; }
+      .footer-top { grid-template-columns:1fr; text-align:center; }
+      .footer-col a { justify-content:center; }
+      .footer-hours-row { font-size:0.8rem; }
+      .footer-veg-badge { align-self:center; }
       .marquee-item { padding:0 16px; font-size:0.82rem; }
       .marquee-item img { width:28px; height:28px; }
     }
@@ -1172,34 +1199,58 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h3>Hotel Sai Swad</h3>
-          <p>Shirpur's favourite pure veg family restaurant. Authentic North Indian, Chinese &amp; Veg Specials made with love and the freshest ingredients.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#menu">Our Menu</a></li>
-            <li><a href="#why-us">Why Choose Us</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Order Food</h4>
-          <ul>
-            <li><a href="#app">Download Our App</a></li>
-            <li><a href="#menu">Browse Menu</a></li>
-            <li><a href="#cuisines">Our Cuisines</a></li>
-          </ul>
-        </div>
+    <div class="footer-cta-strip">
+      <div class="container">
+        <h3>Hungry? Order Now!</h3>
+        <p>Download our app and get your favourite food delivered to your doorstep</p>
+        <a href="#app" class="footer-cta-btn">Order on App &rarr;</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Hotel Sai Swad, Shirpur. All rights reserved.</p>
-        <div class="powered-by">Powered by <a href="https://restroone.vercel.app/" target="_blank" rel="noopener">RestroOne</a></div>
+    </div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-brand-header">
+              <div class="footer-brand-logo">
+                <img src="https://content.jdmagicbox.com/comp/shirpur/l4/9999p2562.2562.220310233936.v6l4/catalogue/hotel-sai-swad-shirpur-restaurants-uwrbt9fpne-250.jpg" alt="Hotel Sai Swad">
+              </div>
+              <h3>Hotel Sai Swad<small>Est. Shirpur</small></h3>
+            </div>
+            <p>Shirpur's favourite pure veg family restaurant. Authentic North Indian, Chinese &amp; Veg Specials made with love and the freshest ingredients.</p>
+            <div class="footer-veg-badge"><span class="fvb-dot"></span> 100% Pure Vegetarian</div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#menu">Our Menu</a></li>
+              <li><a href="#cuisines">Cuisines</a></li>
+              <li><a href="#why-us">Why Choose Us</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Order Food</h4>
+            <ul>
+              <li><a href="#app">Download App</a></li>
+              <li><a href="#menu">Browse Menu</a></li>
+              <li><a href="#contact">Find Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <div class="footer-hours">
+              <div class="footer-hours-row open"><span>Mon &ndash; Sun</span><span>11 AM &ndash; 11 PM</span></div>
+              <div class="footer-hours-row"><span>Address</span><span>Karvand Naka, Shirpur</span></div>
+              <div class="footer-hours-row"><span>Phone</span><span>+91 90967 15630</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Hotel Sai Swad, Shirpur. All rights reserved.</p>
+          <div class="powered-by">Powered by <a href="https://restroone.vercel.app/" target="_blank" rel="noopener">RestroOne</a></div>
+        </div>
       </div>
     </div>
   </footer>
