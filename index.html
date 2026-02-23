@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Sai Swad | Authentic North Indian, Chinese & Biryani | Shirpur</title>
-  <meta name="description" content="Hotel Sai Swad — Shirpur's favourite family restaurant. Authentic North Indian, Chinese & Biryani. 345+ happy customers. Order online via our app. Open 11 AM – 11 PM daily.">
-  <meta property="og:title" content="Hotel Sai Swad — Authentic Homestyle Food | Shirpur">
-  <meta property="og:description" content="Shirpur's favourite family restaurant. North Indian, Chinese & Biryani. Rated 4.2 stars. Order on our app!">
+  <title>Hotel Sai Swad | Pure Veg | North Indian & Chinese | Shirpur</title>
+  <meta name="description" content="Hotel Sai Swad — Shirpur's favourite pure veg family restaurant. Authentic North Indian, Chinese & Veg Specials. 345+ happy customers. Order online via our app. Open 11 AM – 11 PM daily.">
+  <meta property="og:title" content="Hotel Sai Swad — Pure Veg Authentic Homestyle Food | Shirpur">
+  <meta property="og:description" content="Shirpur's favourite pure veg family restaurant. North Indian, Chinese & Specials. Rated 4.2 stars. Order on our app!">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/jpeg" href="https://content.jdmagicbox.com/comp/shirpur/l4/9999p2562.2562.220310233936.v6l4/catalogue/hotel-sai-swad-shirpur-restaurants-uwrbt9fpne-250.jpg">
   <link rel="apple-touch-icon" href="https://content.jdmagicbox.com/comp/shirpur/l4/9999p2562.2562.220310233936.v6l4/catalogue/hotel-sai-swad-shirpur-restaurants-uwrbt9fpne-250.jpg">
@@ -177,35 +177,42 @@
       border-radius: var(--radius-lg); overflow: hidden;
       position: relative; height: 220px;
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.08);
     }
-    .hero-food-card:nth-child(1) { transform: translateY(24px); }
-    .hero-food-card:nth-child(4) { transform: translateY(24px); }
-    .hero-food-card:hover { transform: translateY(16px) scale(1.05); box-shadow: 0 16px 48px rgba(0,0,0,0.28); }
-    .hero-food-card:nth-child(2):hover,
-    .hero-food-card:nth-child(3):hover { transform: scale(1.05); }
+    .hero-food-card:nth-child(1) { transform: translateY(24px) rotate(-1.5deg); }
+    .hero-food-card:nth-child(2) { transform: rotate(1deg); }
+    .hero-food-card:nth-child(3) { transform: rotate(-0.8deg); }
+    .hero-food-card:nth-child(4) { transform: translateY(24px) rotate(1.5deg); }
+    .hero-food-card:hover { transform: translateY(-4px) rotate(0deg) scale(1.06); box-shadow: 0 20px 56px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.12); z-index: 3; }
     .hero-food-card img {
       width: 100%; height: 100%; object-fit: cover;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+      filter: brightness(0.92) saturate(1.1);
     }
-    .hero-food-card:hover img { transform: scale(1.12); }
+    .hero-food-card:hover img { transform: scale(1.15); filter: brightness(1) saturate(1.2); }
     .hero-food-card::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
-      border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg);
-      pointer-events: none;
+      border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg);
+      background: linear-gradient(165deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+      pointer-events: none; transition: all 0.5s ease;
     }
+    .hero-food-card:hover::before { border-color: rgba(255,255,255,0.25); background: linear-gradient(165deg, rgba(255,255,255,0.14) 0%, transparent 40%); }
     .hero-food-card .hfc-overlay {
       position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-      padding: 20px 16px 16px;
-      background: linear-gradient(transparent 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.85) 100%);
-      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 32px 14px 14px;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.88) 100%);
+      display: flex; flex-direction: column; gap: 8px;
+      transform: translateY(4px); transition: transform 0.4s ease;
     }
-    .hero-food-card .hfc-overlay h4 { color: white; font-size: 0.92rem; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+    .hero-food-card:hover .hfc-overlay { transform: translateY(0); }
+    .hero-food-card .hfc-overlay h4 { color: white; font-size: 0.95rem; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); line-height: 1.2; }
     .hero-food-card .hfc-overlay .hfc-badge {
-      background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.25); border-radius: 20px;
-      padding: 4px 10px; font-size: 0.7rem; font-weight: 700; color: white;
-      white-space: nowrap; letter-spacing: 0.3px;
+      align-self: flex-start;
+      background: linear-gradient(135deg, rgba(27,94,32,0.85), rgba(27,94,32,0.7)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+      padding: 4px 12px; font-size: 0.68rem; font-weight: 700; color: white;
+      white-space: nowrap; letter-spacing: 0.5px; text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     /* ── Marquee ──────────────────────────────── */
@@ -336,11 +343,8 @@
     .mi-img img { width: 100%; height: 100%; object-fit: cover; }
     .mi-body { flex: 1; }
     .mi-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-    .badge-v, .badge-nv { width: 15px; height: 15px; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .badge-v { border: 1.5px solid #22C55E; }
+    .badge-v { width: 15px; height: 15px; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1.5px solid #22C55E; }
     .badge-v::after { content: ''; width: 7px; height: 7px; background: #22C55E; border-radius: 50%; }
-    .badge-nv { border: 1.5px solid #EF4444; }
-    .badge-nv::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 7px solid #EF4444; }
     .mi-body h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
     .mi-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.4; }
     .mi-footer { display: flex; align-items: center; justify-content: space-between; }
@@ -689,8 +693,8 @@
           <span class="sub">Authentic Homestyle Flavours</span>
         </h2>
         <p class="hero-subtitle">
-          From rich North Indian curries to sizzling Chinese &amp; aromatic Biryanis &mdash;
-          crafted with fresh ingredients and served with love. Now order from our app!
+          From rich North Indian curries to sizzling Chinese &amp; homestyle specials &mdash;
+          100% pure veg, crafted with fresh ingredients and served with love. Now order from our app!
         </p>
         <div class="hero-actions">
           <a href="#app" class="btn-primary">Order on App</a>
@@ -714,19 +718,31 @@
       <div class="hero-gallery">
         <div class="hero-food-card">
           <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=460&q=80" alt="Paneer Butter Masala" loading="lazy">
-          <div class="hfc-overlay"><h4>Paneer Butter Masala</h4><span class="hfc-badge">Bestseller</span></div>
+          <div class="hfc-overlay">
+            <span class="hfc-badge">Bestseller</span>
+            <h4>Paneer Butter Masala</h4>
+          </div>
         </div>
         <div class="hero-food-card">
-          <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Biryani" loading="lazy">
-          <div class="hfc-overlay"><h4>Chicken Biryani</h4><span class="hfc-badge">Must Try</span></div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlg7JYWWJNnY-MJVGm02itthRtcc105HPt4Q&s" alt="Veg Biryani" loading="lazy">
+          <div class="hfc-overlay">
+            <span class="hfc-badge">Must Try</span>
+            <h4>Veg Biryani</h4>
+          </div>
         </div>
         <div class="hero-food-card">
           <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=460&q=80" alt="Noodles" loading="lazy">
-          <div class="hfc-overlay"><h4>Hakka Noodles</h4><span class="hfc-badge">Popular</span></div>
+          <div class="hfc-overlay">
+            <span class="hfc-badge">Popular</span>
+            <h4>Hakka Noodles</h4>
+          </div>
         </div>
         <div class="hero-food-card">
           <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=460&q=80" alt="Thali" loading="lazy">
-          <div class="hfc-overlay"><h4>Special Thali</h4><span class="hfc-badge">Chef's Pick</span></div>
+          <div class="hfc-overlay">
+            <span class="hfc-badge">Chef's Pick</span>
+            <h4>Special Thali</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -737,13 +753,13 @@
     <div class="marquee-track">
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=48&q=80" alt="">North Indian<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=48&q=80" alt="">Chinese<span class="marquee-dot"></span></span>
-      <span class="marquee-item"><img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg?auto=format&fit=crop&w=48&q=80" alt="">Biryani<span class="marquee-dot"></span></span>
+      <span class="marquee-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlg7JYWWJNnY-MJVGm02itthRtcc105HPt4Q&s" alt="">Biryani<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=48&q=80" alt="">Tandoori<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=48&q=80" alt="">Thali<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=48&q=80" alt="">Fresh Daily<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=48&q=80" alt="">North Indian<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=48&q=80" alt="">Chinese<span class="marquee-dot"></span></span>
-      <span class="marquee-item"><img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg?auto=format&fit=crop&w=48&q=80" alt="">Biryani<span class="marquee-dot"></span></span>
+      <span class="marquee-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlg7JYWWJNnY-MJVGm02itthRtcc105HPt4Q&s" alt="">Biryani<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=48&q=80" alt="">Tandoori<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=48&q=80" alt="">Thali<span class="marquee-dot"></span></span>
       <span class="marquee-item"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=48&q=80" alt="">Fresh Daily<span class="marquee-dot"></span></span>
@@ -787,8 +803,8 @@
           </p>
           <p class="about-text">
             Located opposite Polytechnic College at Karvand Naka, we serve dishes that remind
-            you of home &mdash; from rich North Indian gravies and fragrant biryanis to
-            sizzling Indo-Chinese favourites. Our polite staff and comfortable seating make
+            you of home &mdash; from rich North Indian gravies and aromatic veg specials to
+            sizzling Indo-Chinese favourites. 100% pure vegetarian. Our polite staff and comfortable seating make
             every visit a memorable one.
           </p>
           <div class="about-grid-features">
@@ -820,7 +836,7 @@
       <div class="section-header fade-up">
         <div class="section-label">Our Cuisines</div>
         <h2 class="section-title">Three Cuisines, One Kitchen</h2>
-        <p class="section-subtitle">Every dish crafted with passion &mdash; authentic flavours from North India, fiery Chinese wok, and fragrant biryanis.</p>
+        <p class="section-subtitle">Every dish crafted with passion &mdash; authentic flavours from North India, fiery Chinese wok, and homestyle veg specials.</p>
       </div>
       <div class="cuisines-grid stagger">
         <div class="cuisine-card fade-up">
@@ -840,11 +856,11 @@
           </div>
         </div>
         <div class="cuisine-card fade-up">
-          <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Biryani" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=600&q=80" alt="Thali" loading="lazy">
           <div class="cc-overlay">
             <span class="cc-tag">Must Try</span>
-            <h3>Biryani</h3>
-            <p>Aromatic dum-cooked biryanis with whole spices &amp; saffron</p>
+            <h3>Thali &amp; Specials</h3>
+            <p>Complete veg thalis, dal khichdi &amp; homestyle comfort food</p>
           </div>
         </div>
       </div>
@@ -920,15 +936,6 @@
             <div class="mi-header"><div class="badge-v"></div><h4>Veg Biryani</h4></div>
             <p class="mi-desc">Aromatic basmati rice with fresh mixed vegetables</p>
             <div class="mi-footer"><span class="mi-price">&#8377;180</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item fade-up" data-cat="main">
-          <div class="mi-img"><img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Chicken Biryani" loading="lazy"></div>
-          <div class="mi-body">
-            <div class="mi-header"><div class="badge-nv"></div><h4>Chicken Biryani</h4></div>
-            <p class="mi-desc">Dum-cooked Hyderabadi-style chicken biryani</p>
-            <div class="mi-footer"><span class="mi-price">&#8377;220</span><span class="mi-tag best">Bestseller</span></div>
           </div>
         </div>
 
@@ -1016,7 +1023,7 @@
         </div>
         <div class="why-card fade-up">
           <div class="why-card-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" alt="Variety" loading="lazy"></div>
-          <div class="why-card-body"><h3>50+ Menu Items</h3><p>North Indian, Chinese, Biryani &mdash; something delicious for everyone in the family.</p></div>
+          <div class="why-card-body"><h3>50+ Menu Items</h3><p>North Indian, Chinese &amp; Veg Specials &mdash; something delicious for everyone in the family.</p></div>
         </div>
       </div>
     </div>
@@ -1092,7 +1099,7 @@
         </div>
         <div class="review-card fade-up">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Reasonable rates and nice ambience. The biryani is worth every rupee. Service is fast and the staff is always welcoming. Highly recommended!"</p>
+          <p class="review-text">"Reasonable rates and nice ambience. The paneer dishes are worth every rupee. Service is fast and the staff is always welcoming. Highly recommended!"</p>
           <div class="review-author">
             <div class="review-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=84&q=80" alt="SM"></div>
             <div><h5>Sneha M.</h5><span>Food Enthusiast</span></div>
@@ -1169,7 +1176,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <h3>Hotel Sai Swad</h3>
-          <p>Shirpur's favourite family restaurant. Authentic North Indian, Chinese &amp; Biryani dishes made with love and the freshest ingredients.</p>
+          <p>Shirpur's favourite pure veg family restaurant. Authentic North Indian, Chinese &amp; Veg Specials made with love and the freshest ingredients.</p>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
